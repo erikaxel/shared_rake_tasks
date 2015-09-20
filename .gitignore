@@ -1,0 +1,15 @@
+\#*
+*~
+.#*
+.DS_Store
+.idea
+.project
+.sass-cache
+coverage
+Gemfile.lock
+tmp
+nbproject
+pkg
+*.iml
+*.swp
+spec/dummy
