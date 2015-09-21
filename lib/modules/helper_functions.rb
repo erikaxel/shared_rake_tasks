@@ -62,7 +62,12 @@ module HelperFunctions
   end
 
   def db_url(env)
-    ENV["#{env}_DATABASE_URL"]
+    url = ENV["#{env}_DATABASE_URL"]
+    if url.nil? or url.length < 1
+      puts "Couldn't find environment variable: #{env}_DATABASE_URL"
+      exit
+    end
+    url
   end
 
   def shell(cmd)

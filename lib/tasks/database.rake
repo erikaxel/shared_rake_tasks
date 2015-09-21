@@ -9,11 +9,11 @@ namespace :db do
 
   task dump_backup: :environment do
     download_s3
-    system 'bunzip2 -f today.sql.bz2'
+    shell 'bunzip2 -f today.sql.bz2'
   end
 
   task :load, [:env] do |t, args|
     desc 'Loading database from today.sql'
-    system "#{mysql(parse_db_string(ENV['DEV_DATABASE_URL']))} < today.sql"
+    shell "#{mysql(parse_db_string(db_url(environments(args[:env]))))} < today.sql"
   end
 end
