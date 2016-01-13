@@ -14,6 +14,12 @@ namespace :db do
 
   task :load, [:env] do |t, args|
     desc 'Loading database from today.sql'
-    shell "#{mysql(parse_db_string(db_url(environments(args[:env]))))} < today.sql"
+    Rake::Task['db:run_file'].invoke(args[:env], 'today.sql')
+  end
+
+  task :run_file, :env, :file do |t, args|
+    desc 'Running a .sql file to a database'
+    file = args[:file] || 'today.sql'
+    shell "#{mysql(parse_db_string(db_url(environments(args[:env]))))} < #{file}"
   end
 end

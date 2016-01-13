@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'shared_rake_tasks'
-  s.version     = '1.0.2'
+  s.version     = '1.0.3'
   s.summary     = 'Common DB and Google tasks'
   s.description = 'Common DB and Google tasks'
   s.required_ruby_version = '>= 2.0.0'
