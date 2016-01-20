@@ -21,18 +21,18 @@ module HelperFunctions
   def mysql(db)
     sslca = db[:sslca].nil? ? '' : "--ssl_ca=#{db[:sslca]}"
     if RUBY_PLATFORM.downcase.include?('mingw32')
-      "env MYSQL_PWD=#{db[:pass]} mysql -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{sslca}"
-    else
       "mysql -u #{db[:user]} -p#{db[:pass]}  -h #{db[:host]} #{db[:db]} #{sslca}"
+    else
+      "env MYSQL_PWD=#{db[:pass]} mysql -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{sslca}"
     end
   end
 
   def mysqldump(db)
     sslca = db[:sslca].nil? ? '' : "--ssl_ca=#{db[:sslca]}"
     if RUBY_PLATFORM.downcase.include?('mingw32')
-      "env MYSQL_PWD=#{db[:pass]} mysqldump -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{sslca}"
-    else
       "mysqldump -u #{db[:user]} -p#{db[:pass]} -h #{db[:host]} #{db[:db]} #{sslca}"
+    else
+      "env MYSQL_PWD=#{db[:pass]} mysqldump -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{sslca}"
     end
   end
 
