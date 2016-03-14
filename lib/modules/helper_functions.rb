@@ -27,12 +27,12 @@ module HelperFunctions
     end
   end
 
-  def mysqldump(db)
+  def mysqldump(db, table='')
     sslca = db[:sslca].nil? ? '' : "--ssl_ca=#{db[:sslca]}"
     if RUBY_PLATFORM.downcase.include?('mingw32')
-      "mysqldump -u #{db[:user]} -p#{db[:pass]} -h #{db[:host]} #{db[:db]} #{sslca}"
+      "mysqldump -u #{db[:user]} -p#{db[:pass]} -h #{db[:host]} #{db[:db]} #{table} #{sslca}"
     else
-      "env MYSQL_PWD=#{db[:pass]} mysqldump -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{sslca}"
+      "env MYSQL_PWD=#{db[:pass]} mysqldump -u #{db[:user]} -h #{db[:host]} #{db[:db]} #{table} #{sslca}"
     end
   end
 
