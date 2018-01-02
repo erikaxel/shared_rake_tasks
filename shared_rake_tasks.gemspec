@@ -2,13 +2,13 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'shared_rake_tasks'
-  s.version     = '1.0.6'
+  s.version     = '1.0.7'
   s.summary     = 'Common DB and Google tasks'
   s.description = 'Common DB and Google tasks'
   s.required_ruby_version = '>= 2.0.0'
 
   s.author    = 'Erik Axel Nielsen'
-  s.email     = 'erikaxel.nielsen@gmail.com'
+  s.email     = 'erikaxel@lucalabs.com'
   s.homepage  = 'http://www.example.com'
 
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'aws-sdk', '~> 2'
+  s.add_dependency 'aws-sdk'
 end
