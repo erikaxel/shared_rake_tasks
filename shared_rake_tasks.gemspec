@@ -2,7 +2,7 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'shared_rake_tasks'
-  s.version     = '1.0.8'
+  s.version     = '1.0.9'
   s.summary     = 'Common DB and Google tasks'
   s.description = 'Common DB and Google tasks'
   s.required_ruby_version = '>= 2.0.0'
@@ -18,6 +18,5 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.requirements << 'none'
 
-  s.add_dependency 'aws-sdk-configservice'
   s.add_dependency 'aws-sdk-s3'
 end

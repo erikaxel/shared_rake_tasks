@@ -1,4 +1,4 @@
-require 'aws-sdk'
+require 'aws-sdk-s3'
 
 module HelperFunctions
   def parse_db_string(env=ENV['TEST_DATABASE_URL'])
